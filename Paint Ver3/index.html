@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="paint.css">
+  <title>Paint</title>
+</head>
+<body>
+
+  <!-- <div id="myModal" class="modal">
+  <div class="modal-content">
+  <span class="close">&times;</span>
+  <input id="user_input" type="text" name="" value="" placeholder="ingrese su usuario">
+  <button id="ingreso_usuario" type="button" name="button">Ok</button>
+</div>
+</div> -->
+
+<div id="nav" class="">
+  <h2>Artist: <span id="user_name"></span></h2>
+</div>
+<div id="color_options_container" class="">
+  <!-- <option value=""></option> -->
+</div>
+<h4 id="current_color_container">Current Color<span id="" class=""></span></h4>
+
+
+
+<!-- <h1>Click to start painting</h1> -->
+
+<div id="grid_id" class="grid">
+
+</div>
+
+<script type="text/javascript">
+var grid= document.querySelector('#grid_id');
+var color_options_container = document.querySelector("#color_options_container");
+var current_color_container = document.querySelector("#current_color_container");
+
+var counter=1;
+var paint = false;
+var color;
+
+// we create divs to color
+for (var i = 0; i < 3500; i++) {
+  var node = document.createElement("DIV");
+  node.id = "a"+[i];
+  node.classList.toggle('cell');
+  grid.appendChild(node);
+}
+
+var colors = ['#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4',
+'#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324',
+'#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#999',
+'#ffffff', '#000000'];
+
+for (var i = 0; i < colors.length; i++) {
+  var node = document.createElement("DIV");
+  node.innerHTML=colors[i];
+  node.classList.add('color_box');
+  node.style.backgroundColor=colors[i];
+  color_options_container.appendChild(node);
+}
+
+color_options_container.addEventListener("click", setColor);
+function setColor(event) {
+  color=event.target.innerHTML;
+  current_color_container.style.backgroundColor=color;
+  // document.querySelector("body").style.backgroundColor=color;
+}
+
+grid_id.addEventListener("mouseover", paintFun);
+function paintFun(e) {
+  if (paint) {
+    e.target.style.backgroundColor = color;
+  }
+}
+
+grid_id.addEventListener("click", activatePaintor);
+function activatePaintor(e) {
+  if (color) {
+    paint = !paint;
+  }
+  else{
+    alert("Select a color");
+  }
+}
+
+</script>
+<script type="text/javascript" src="modal.js" ></script>
+</body>
+</html>

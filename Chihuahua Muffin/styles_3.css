@@ -15,6 +15,9 @@ body{
   display: flex;
   background-color: rgba(183, 190, 189, 0.57);
   padding: 10px;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
 }
 .respuesta{
   transition: 1s all;

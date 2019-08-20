@@ -7,9 +7,6 @@ function inputLength(){
 	return input.value.length;
 }
 
-function listLength(){
-	return item.length;
-}
 
 function createListElement() {
 	var li = document.createElement("li"); // creates an element "li"
