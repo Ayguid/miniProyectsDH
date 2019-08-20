@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+
+  <div class="container">
+
+    <h1>Hangman</h1>
+    <p id="wordContainer"></p>
+    <form name="guessForm">
+    <input name="input" type="text" size="5" maxlength="1">
+    <input name="submitButton" type="button" value="Guess" onClick="submitAnswer()">
+
+    <p id="wrongContainer">Wrong Letters:</p>
+    <input name="refresh" type="button" value="New Game" onClick="location.reload()">
+    </form>
+
+  </div>
+
+  <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

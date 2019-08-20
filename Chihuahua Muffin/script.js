@@ -5,33 +5,27 @@ var questionNum=0;
 var questionContainer = document.querySelector('#question-container');
 var imageContainer = questionContainer.children[0];
 var answerButtons = document.querySelector('#answer-buttons');
-
 var questions={
   0:{
-    answer:'true',
+    answer:'Chihuahua',
     image:'./images/chihuahua1.png'
   },
   1:{
-    answer:'false',
+    answer:'Muffin',
     image:'./images/muffin1.png'
   },
   2:{
-    answer:'true',
+    answer:'Chihuahua',
     image:'./images/chihuahua2.png'
   },
   3:{
-    answer:'false',
+    answer:'Muffin',
     image:'./images/muffin2.png'
   },
 }
 
-
-
-//
-function showQuestion() {
-  //set image for question
-    imageContainer.src = questions[questionNum].image;
-  //
+function showQuestion() {//set image for question
+  imageContainer.src = questions[questionNum].image;
 }
 
 answerButtons.addEventListener('click', answerQuestion);
@@ -40,15 +34,17 @@ function answerQuestion(event) {
   if (target==answerButtons) {
     return;
   }else if(Object.keys(questions).length-1>questionNum){//if we have questions left...
-    //if it is correct
-    if (target.value == questions[questionNum].answer ) {
+    if (target.value == questions[questionNum].answer ) {//if correct
       questionNum++;
       showQuestion();
-    }else {//if not
+    }else {//if wrong
       alert('Intenta nuevamente');
     }
+  }else {//if we dont have questions left...!!!
+    alert('No quedan preguntas');
   }
 }
+
 
 //start game
 showQuestion();
