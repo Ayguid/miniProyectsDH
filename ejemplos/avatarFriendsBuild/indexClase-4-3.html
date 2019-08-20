@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <!-- Styles -->
+  <style media="screen">
+  *{
+    box-sizing: border-box;
+  }
+  .floating {
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    padding: 10px;
+    float: left;
+    width: 23%;
+    margin: 1%;
+    background-color:rgb(52, 76, 147);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    text-align: center;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .floating:hover {background-color: #3e8e41}
+
+  .floating:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  @keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }
+  }
+  </style>
+  <title></title>
+</head>
+<body>
+  <h1>Mi Tercera Clase de Js</h1>
+
+  <!-- Abajo, pegado al final del body, dentro de una etiqueta SCRIPT escribiremos nuestro codigo JS -->
+  <script type="text/javascript">
+  // JS code...
+
+  var nombres = ["Mercedes", "Clari", "Fran", "Nico", "Guido", "Batman", "Superman", "IronMan"];
+  var avatars = ["https://image.flaticon.com/icons/svg/180/180679.svg", "https://image.flaticon.com/icons/svg/180/180675.svg", "https://image.flaticon.com/icons/svg/180/180644.svg", "https://image.flaticon.com/icons/svg/180/180677.svg", "https://image.flaticon.com/icons/svg/180/180677.svg", "https://image.flaticon.com/icons/svg/180/180677.svg", "https://image.flaticon.com/icons/svg/180/180677.svg", "https://image.flaticon.com/icons/svg/180/180677.svg"];
+  //
+  var saludo = true;
+
+  if (saludo) {
+
+      for (i = 0; i < nombres.length; i++) {//hacemos esto por cada nombre en la lista.
+        var div = document.createElement("DIV");// Creamos un div
+        var img = document.createElement("IMG");// Creamos una img
+        div.innerHTML = nombres[i];// Insertamos texto al div que corresponde al array 'nombres' en ese indice
+        img.src = avatars[i];// asignamos el src de la img desde el array 'avatars'
+        div.classList.add('floating');//le agregamos la clase floating al div
+        div.appendChild(img);//le agregamos la img al div
+        document.body.appendChild(div);//le agregamos el div al body
+      }
+
+  }else {
+    alert('No puedes ver mi lista de compañeros');
+  }
+
+
+
+  </script>
+</body>
+</html>

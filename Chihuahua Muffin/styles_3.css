@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+*{
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(196, 174, 217);
+  /* background-image: url("./images/muffinChihuaha.jpeg"); */
+}
+
+#display,#score_container{
+  padding: 10px;
+}
+.master_container{
+  display: flex;
+  background-color: rgba(183, 190, 189, 0.57);
+  padding: 10px;
+}
+.respuesta{
+  transition: 1s all;
+}
+
+.respuesta:hover{
+  background-color: rgb(158, 149, 139);
+}
+
+
+.hidden{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(169, 149, 212);
+  margin-bottom: 10px;
+}
+
+.logo{
+width: 10%;
+}
+.logo_img {
+  width: 100%;
+}
+
+
+.game_points{
+  color:red;
+  font-size: 40px;
+}

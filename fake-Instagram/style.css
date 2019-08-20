@@ -10,6 +10,7 @@
 }
 
 body {
+  user-select: none;
     font-family: "Open Sans", Arial, sans-serif;
     min-height: 100vh;
     background-color: #fafafa;
