@@ -10,7 +10,6 @@ var random = Math.floor((Math.random()*(words.length-1)));
 
 var randomWord = words[random]; // the word to guess will be chosen from the array above
 var randomWordLength = new Array(randomWord.length);
-console.log(randomWordLength);
 var errors = 0;
 
 // every letter in the word is symbolized by an underscore in the guessfield
