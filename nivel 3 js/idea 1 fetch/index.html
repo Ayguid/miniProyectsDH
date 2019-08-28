@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="">
+      <img id="image" src="" alt="">
+    </div>
+    <div class="">
+      <h3 id="joke"></h3>
+    </div>
+
+  <button type="button" name="button" onclick="fetchJoke()">Fetch Joke</button>
+
+  <script type="text/javascript">
+
+  var fetchJoke = function(){
+  fetch('https://api.chucknorris.io/jokes/random')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(myJson);
+    image.src=myJson.icon_url;
+    joke.innerHTML=myJson.value;
+  });
+}
+
+//initial joke
+fetchJoke();
+  </script>
+  </body>
+</html>

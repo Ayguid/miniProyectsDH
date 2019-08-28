@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  body{
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    background-color: rgb(56, 214, 202);
+  }
+  .box{
+    margin-top: 4px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(119, 119, 119, 0.54);
+  }
+  .country_data{
+    text-align: center;
+  }
+  .icon{
+    background-color: black;
+    color: white;
+  }
+  .temps{
+  }
+  .humidity{
+  }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="icon">
+    <img id="icon" src="" alt="">Weather BIG DATA
+  </div>
+
+  <div class="country_data">
+    <h1 id="country"></h1>
+  </div>
+
+  <div class="gmap_canvas">
+    <iframe width="600" height="300" id="gmap_canvas" src="" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+  </div>
+
+
+  <div class="temps box">
+    <h3 id="temp"></h3>
+    <h3 id="min_temp"></h3>
+    <h3 id="max_temp"></h3>
+  </div>
+
+  <div class="humidity box">
+    <h3 id="humidity"></h3>
+  </div>
+
+  <div class="controls box">
+    <label for="">Latitud</label>
+    <input id="latitud" type="number" name="latitud" value="-34.603722" placeholder="Ingrese una latitud">
+    <label for="">Longitud</label>
+    <input id="longitud" type="number" name="longitud" value="-58.381592" placeholder="Ingrese una longitud">
+    <button type="button" name="button" onclick="fetchData()">Fetch</button>
+
+  </div>
+
+  <br>
+  <br>
+  <h4>Ejemplos</h4>
+  //arg <br>
+  -34.603722, -58.381592 <br>
+  //Germany <br>
+  51.133481, 10.018343
+
+
+  <script type="text/javascript">
+  var fetchData = function(){
+    latitud = document.getElementById('latitud').value;
+    longitud = document.getElementById('longitud').value;
+    fetch('https://fcc-weather-api.glitch.me/api/current?lat='+latitud+'&lon='+longitud)
+    // fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/fcf3005661026180f5d9fb79880d28d9/-34.603722,-58.381592')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(myJson) {
+      console.log(myJson);
+      gmap_canvas.src = "https://maps.google.com/maps?q="+latitud+","+longitud+"&t=&z=13&ie=UTF8&iwloc=&output=embed";
+      icon.src = myJson.weather[0].icon;
+      country.innerHTML = 'Pais: ' + myJson.sys.country;
+      temp.innerHTML = 'Avg Temp: ' + myJson.main.temp;
+      min_temp.innerHTML = 'Min Temp: ' + myJson.main.temp_min;
+      max_temp.innerHTML = 'Max Temp: ' + myJson.main.temp_max;
+      humidity.innerHTML = 'Humidity: ' + myJson.main.humidity;
+    });
+  }
+
+  // fetchData();
+  </script>
+</body>
+</html>
