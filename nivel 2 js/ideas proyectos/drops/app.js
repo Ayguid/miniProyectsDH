@@ -9,7 +9,7 @@ var points=0;
 function getElement(who) {
   return document.querySelector(who);
 }
-//we acpture the drops_container and add an event listener to hear clicks
+//we capture the drops_container and add an event listener to hear clicks
 var drops_container = getElement("#drops_container");
 drops_container.addEventListener("click", handleClick);
 //we do something on click

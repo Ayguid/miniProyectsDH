@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    LOGIN
+
+
+    <script type="text/javascript">
+    // Este ejercicio usa metodos como toLowerCase,,,y usamos prompt tmb,,,,con un poco de condiciones.
+
+      // var password = "javascript";
+      //
+      // function pedirPassword() {//agregar validacion con toLowerCase
+      //   var confirmacion_del_usuario=prompt('Ingrese el Password').toLowerCase();
+      //   if (confirmacion_del_usuario==password) {
+      //     window.location.href = "home.html";
+      //   }else {
+      //     pedirPassword();//explicar
+      //   }
+      // }
+      //
+      //
+      // pedirPassword();
+
+
+      //otra manera de mostrarlo
+      var password = "javascript";
+      var logged=false;
+
+      while (!logged) {
+        pedirPassword();
+      }
+
+
+      function pedirPassword() {//agregar validacion con toLowerCase
+        var confirmacion_del_usuario=prompt('Ingrese el Password').toLowerCase();
+        if (confirmacion_del_usuario==password) {
+          logged=true;
+          window.location.href = "home.html";
+        }
+      }
+
+
+
+    </script>
+  </body>
+</html>
