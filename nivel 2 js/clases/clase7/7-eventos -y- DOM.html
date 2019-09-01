@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Eventos Y Dom</h1>
+
+    <p>Hacer Click para mostrar la hora</p>
+
+    <button id="myBtn">Mostrar</button>
+
+    <p id="demo"></p>
+
+    <script>
+
+    var demo = document.getElementById("demo");
+
+    document.getElementById("myBtn").onclick = mostrarHora;// mostrar este metodo mejor?
+
+    function mostrarHora() {
+      demo.innerHTML = Date();
+      demo.style.border = "1px solid red";
+    }
+
+    </script>
+
+  </body>
+</html>

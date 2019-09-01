@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .tarjeta{
+        float:left;
+        width:23%;
+        margin:1%;
+        height:50px;
+        background-color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Funciones</h2>
+
+    <p>En este ejemplo llamamos a una funcion que realiza un calculo y nos lo devuelve:</p>
+
+    <div class="tarjeta"></div>
+    <div class="tarjeta"></div>
+    <div class="tarjeta"></div>
+    <div class="tarjeta"></div>
+
+    <script>
+    var tarjetas = document.getElementsByClassName('tarjeta');
+    var mult=5;
+
+    function multiplicar(x, y) {//ver de agregar condiciones para repasar
+      return x * y;
+    }
+
+    for (var i = 0; i < tarjetas.length; i++) {
+      tarjetas[i].innerHTML = multiplicar(i, mult);
+    }
+
+    </script>
+  </body>
+</html>

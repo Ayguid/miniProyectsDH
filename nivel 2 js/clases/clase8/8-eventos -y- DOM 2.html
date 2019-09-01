@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #myDiv{
+        background-color:#D94A38;
+        width:90px;
+        height:20px;
+        padding:40px;
+      }
+    </style>
+  </head>
+  <body>
+
+  <h1>Eventos Y Dom 2</h1>
+
+  <div id="myDiv">Hace click y despues Solta</div>
+
+
+  <script>
+
+  document.getElementById("myDiv").onmousedown = mDown;
+  document.getElementById("myDiv").onmouseup = mUp;
+
+  function mDown(event) {//mostrar event target antes que this
+    var objetivo = event.target;
+    objetivo.style.backgroundColor = "#1ec5e5";
+    objetivo.innerHTML = "Suelta";
+  }
+
+  function mUp(event) {
+    var objetivo = event.target;
+    objetivo.style.backgroundColor="#D94A38";
+    objetivo.innerHTML="Gracias";
+  }
+
+  </script>
+  </body>
+</html>

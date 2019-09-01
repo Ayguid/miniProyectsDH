@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  <h1>Salidas de informacion</h1>
+  <h4>Son varios los metodos para mostrar informacion, pero solo usaremos tres por ahora.</h4>
+  <ul>
+    <li>Escribir en un elemento HTML, usando innerHTML.</li>
+    <li>Escribir en la salida HTML usando document.write().</li>
+    <li>Escribir en un cuadro de alerta, usando window.alert().</li>
+    <li>Escribir en la consola del navegador, usando console.log().</li>
+  </ul>
+
+
+  <p id="demo"></p>
+
+
+
+  <script>
+
+    document.getElementById("demo").innerHTML = 5 + 6;
+    // window.alert(5 + 6);
+    //console.log(5 + 6);
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+
+    <p>Mostrar "Buen Día" si la hora es menos a las" 18:00:</p>
+
+    <p id="demo">Buenas noches!</p>
+
+
+
+
+    <script>
+    var horas = new Date().getHours();
+
+    if (horas < 18) {
+      document.getElementById("demo").innerHTML = "Buen Día!";
+    }
+
+    </script>
+
+    </body>
+
+</html>

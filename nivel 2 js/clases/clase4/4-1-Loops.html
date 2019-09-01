@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h2>JavaScript For Loop</h2>
+
+    <p id="demo"></p>
+
+    <script>
+
+      var comidas = [
+        "Hamburguesa",
+        "Fideos",
+        "Chocolate"
+      ];
+      
+      var texto = "";
+
+      for (var i = 0; i < comidas.length; i++) {
+        texto += comidas[i] + "<br>";
+      }
+
+    document.getElementById("demo").innerHTML = texto;
+
+    </script>
+
+  </body>
+</html>

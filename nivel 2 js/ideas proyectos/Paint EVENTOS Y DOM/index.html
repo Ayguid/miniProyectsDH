@@ -24,8 +24,6 @@
 </div>
 <h4 id="current_color_container">Current Color<span id="" class=""></span></h4>
 
-
-
 <!-- <h1>Click to start painting</h1> -->
 
 <div id="grid_id" class="grid">
@@ -66,18 +64,18 @@ color_options_container.addEventListener("click", setColor);
 function setColor(event) {
   color=event.target.innerHTML;
   current_color_container.style.backgroundColor=color;
-  // document.querySelector("body").style.backgroundColor=color;
+  document.querySelector("body").style.backgroundColor=color;
 }
 
-grid_id.addEventListener("mouseover", paintFun);
-function paintFun(e) {
+grid_id.addEventListener("mouseover", paintDiv);
+function paintDiv(event) {
   if (paint) {
-    e.target.style.backgroundColor = color;
+    event.target.style.backgroundColor = color;
   }
 }
 
 grid_id.addEventListener("click", activatePaintor);
-function activatePaintor(e) {
+function activatePaintor(event) {
   if (color) {
     paint = !paint;
   }
@@ -87,6 +85,6 @@ function activatePaintor(e) {
 }
 
 </script>
-<script type="text/javascript" src="modal.js" ></script>
+<!-- <script type="text/javascript" src="modal.js" ></script> -->
 </body>
 </html>
