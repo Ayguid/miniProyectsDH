@@ -9,10 +9,13 @@
   <h1>Salidas de informacion</h1>
 
   <h4>Son varios los metodos para mostrar informacion, pero solo usaremos tres por ahora.</h4>
-  
+
   <ul>
+    <!-- usado para escribri en el documento -->
     <li>Escribir en un elemento HTML, usando innerHTML.</li>
+    <!-- usado para cortar ejecucion y mostrar algo en pantalla -->
     <li>Escribir en un cuadro de alerta, usando window.alert().</li>
+    <!-- usado para debug y mostrar errores -->
     <li>Escribir en la consola del navegador, usando console.log().</li>
   </ul>
 
@@ -22,10 +25,11 @@
 
 
   <script>
-
+    //en muchos de nuestros ejemplos veremos las siguientes lineas de codigo..
+    // prende y apaga las siguientes lineas y observa que sucede
     document.getElementById("demo").innerHTML = 5 + 6;
     // window.alert(5 + 6);
-    //console.log(5 + 6);
+    //console.log(5 + 6);//en consola
   </script>
 
   </body>
