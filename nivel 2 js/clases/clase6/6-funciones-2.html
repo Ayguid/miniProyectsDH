@@ -16,7 +16,7 @@
   <body>
     <h2>Funciones</h2>
 
-    <p>En este ejemplo llamamos a una funcion que realiza un calculo y nos lo devuelve:</p>
+    <p>En este ejemplo llamamos a una funcion dentro de un for loop:</p>
 
     <div class="tarjeta"></div>
     <div class="tarjeta"></div>
@@ -25,14 +25,13 @@
 
     <script>
     var tarjetas = document.getElementsByClassName('tarjeta');
-    var mult=5;
 
     function multiplicar(x, y) {//ver de agregar condiciones para repasar
       return x * y;
     }
 
     for (var i = 0; i < tarjetas.length; i++) {
-      tarjetas[i].innerHTML = multiplicar(i, mult);
+      tarjetas[i].innerHTML = multiplicar(5, i);
     }
 
     </script>

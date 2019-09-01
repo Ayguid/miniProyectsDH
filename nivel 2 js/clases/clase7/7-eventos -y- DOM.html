@@ -17,7 +17,8 @@
 
     var demo = document.getElementById("demo");
 
-    document.getElementById("myBtn").onclick = mostrarHora;// mostrar este metodo mejor?
+    document.getElementById("myBtn").onclick = mostrarHora;// mostrar este metodo mejor?--antes que add event listener
+    // document.getElementById("myBtn").addEventListener('click', mostrarHora);// mostrar este metodo mejor?--antes que add event listener 
 
     function mostrarHora() {
       demo.innerHTML = Date();

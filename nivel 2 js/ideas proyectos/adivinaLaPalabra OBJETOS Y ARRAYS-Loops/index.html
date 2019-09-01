@@ -189,11 +189,11 @@
   //mostrar imagenes de la pregunta al usuario
   mostrarImagenes();//--ejercicio sacar esta parte--
   //
-  
+
   function mostrarImagenes() {//posible ejercicio no depender de los divs ya creados,,,que se armen solos dependiendo de la cantidad de fotos//ver de sumar timer
     for (var i = 0; i < cajas_imagenes.length; i++) {
-      pista.innerHTML=preguntas[ronda].pista;
       cajas_imagenes[i].style.backgroundImage='url('+preguntas[ronda].fotos[i]+')';
+      pista.innerHTML=preguntas[ronda].pista;
     }
   }
 
