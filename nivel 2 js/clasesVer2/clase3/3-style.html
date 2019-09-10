@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style media="screen">
+      .back{
+        background-color: grey;
+      }
+    </style>
   </head>
   <body>
 
@@ -12,10 +17,13 @@
   <p>El color del párrafo fue cambiado por JS.</p>
 
   <script>
-
+    //Mostrar .style.
+    //Mostrar .classList.add()
 
     var color = 'blue';
+
     document.getElementById("demo").style.color = color;
+    document.getElementById("demo").classList.add('back');
 
 
   </script>

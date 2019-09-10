@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <p id="listaPersonajes"></p>
+
+  <p id="datos_personaje_principal"></p>
+
+  <p id="datos_personaje_secundario"></p>
+
+  <script type="text/javascript">
+
+  var personajePrincipal = {
+    nombre:"Batman",
+    edad: 30,
+    retirado: false
+  };
+
+  var personajeSecundario = {
+    nombre:"Robin",
+    edad: 25,
+    retirado: true
+  };
+
+  var personajes = [
+    personajePrincipal, personajeSecundario
+  ];
+
+  //    console.log(personajes);
+  document.getElementById('listaPersonajes').innerHTML = JSON.stringify(personajes);//Objeto a string,,,asi lo podemos poner dentro del innerHMTL
+  //    console.log(personajes[0].nombre);
+  document.getElementById('datos_personaje_principal').innerHTML = "<p> Nombre: " + personajes[0].nombre + " Edad: " + personajes[0].edad + "</p>";
+  //    console.log(personajes[1].nombre);
+  document.getElementById('datos_personaje_secundario').innerHTML = "<p> Nombre: " + personajes[1].nombre + " Edad: " + personajes[1].edad + "</p>";
+
+  </script>
+
+</body>
+</html>
