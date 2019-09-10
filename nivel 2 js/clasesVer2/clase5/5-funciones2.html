@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Funciones y condiciones</h1>
+
+
+    <p id="demo" onclick="validarEdad()"> Click aqui para log-in </p>
+
+
+
+    <script type="text/javascript">
+
+      //importate, aclarar el scope de las variables.
+      function validarEdad() {
+        var edad = prompt('ingresa tu edad');//este metodo nos sirve para capturar informacion del usuario
+        var mensaje = "No puedes logearte"
+        if (edad>=16) {//explicar el mayor o igual
+            mensaje="Puedes logearte"
+        }
+        document.getElementById("demo").innerHTML = mensaje;
+      }
+
+
+
+    </script>
+
+
+
+  </body>
+</html>
