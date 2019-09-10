@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+  ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0 0 0;
+    padding: 0;
+  }
+  ol li {
+    counter-increment: my-awesome-counter;
+    display: flex;
+    width: 50%;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  ol li::before {
+    content: "0" counter(my-awesome-counter);
+    font-weight: bold;
+    font-size: 3rem;
+    margin-right: 0.5rem;
+    font-family: 'Abril Fatface', serif;
+    line-height: 1;
+  }
+
+  body {
+    padding: 1rem;
+    font-family: sans-serif;
+    background-color: rgb(175, 162, 162);
+  }
+  </style>
+</head>
+<body>
+
+    <h1>Clase 1 Ej1</h1>
+    <hr>
+    <h2>Cambia el contenido de cada item con JS y comprueba de que tambien se vea por consola</h2>
+    
+  <ol>
+    <li id="primero_lista">Batman<!--  --></li>
+    <li id="segundo_lista">Chuck Norris<!--  --></li>
+    <li id="tercero_lista">Messi<!--  --></li>
+    <li id="cuarto_lista">Londra<!--  --></li>
+  </ol>
+
+
+
+<script type="text/javascript">
+  //
+
+</script>
+
+</body>
+</html>
