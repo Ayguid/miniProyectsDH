@@ -3,21 +3,83 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <style media="screen">
+  body{
+    background-color: rgb(224, 185, 221);
+  }
+  h1{
+    text-align: center;
+    border: 2px solid rgb(209, 105, 87);
+    border-radius: 5px;
+    padding: 10px;
+  }
+  p{
+    font-size: 2em;
+  }
+  ul{
+    font-size: 1.5em;
+    color: rgb(134, 131, 110);
+    background-color: rgba(218, 218, 218, 0.77);
+    padding: 30px;
+  }
+  .red {
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    background-color: red;
+  }
+
+  .green {
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    background-color: green;
+  }
+  </style>
 </head>
 <body>
 
-  <h2>Que puede hacer JS?</h2>
+  <h1>Que es JS?</h1>
 
+  <p>
+    <strong>
+      JavaScript es uno de los lenguajes de programación más populares del mundo con más de veinte años de historia. También es uno de los tres principales lenguajes para desarrolladores web:
+    </strong>
+  </p>
+
+  <ul>
+    <li>HTML: Te permite agregar contenido a una página web.</li>
+    <li>CSS: Especifica el diseño, el estilo y la alineación de las páginas web.</li>
+    <li>JavaScript: Mejora la forma en que se comportan las páginas web.</li>
+  </ul>
+
+  <p>
+    <strong>
+      JavaScript se puede aprender de forma rápida y fácil, y se puede usar para una amplia variedad de propósitos, desde simplemente mejorar la funcionalidad de un sitio web hasta ejecutar juegos y software basado en la web.
+    </strong>
+  </p>
+
+
+  <h1>Que puede hacer JS?</h1>
   <p id="demo">JavaScript puede cambiar contenido HTML entre otras cosas</p>
 
   <button type="button" onclick='cambiarContenido()'>Click aca!</button>
 
+  <div class="red">Pasa por encima Y JS animara el elemento</div>
 
+  <div class="green">Pasa por encima</div>
+
+  <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript">
 
   function cambiarContenido(){
     document.getElementById("demo").innerHTML = "Hola JavaScript!";
+    document.getElementsByTagName("body")[0].style.backgroundColor = "yellow";
   }
+
+
 
   </script>
 

@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <style media="screen">
-      .back{
-        background-color: grey;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  .back{
+    background-color: grey;
+  }
+  </style>
+</head>
+<body id="body">
 
   <p id="demo">Hola!!</p>
 
 
-  <p>El color del párrafo fue cambiado por JS.</p>
+  <button id="demo2" onclick="cambiarEstilo()" type="button" name="button">Cambiar el color de fondo.</button>
 
   <script>
-    //Mostrar .style.
-    //Mostrar .classList.add()
+  //Mostrar .style.
+  //Mostrar .classList.add()
+  //Mostrar .classList.toggle()
 
-    var color = 'blue';
+  var color = 'blue';
+  document.getElementById("demo").style.color = color;
 
-    document.getElementById("demo").style.color = color;
-    document.getElementById("demo").classList.add('back');
 
+  function cambiarEstilo() {
+    document.getElementById("body").classList.toggle('back');
+  }
 
   </script>
 
-  </body>
+</body>
 </html>
