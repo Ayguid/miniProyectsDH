@@ -6,33 +6,33 @@
 </head>
 
 
-<!-- example 1  start-->
-<!-- <body>
-
-  <h1>Intro a JS</h1>
-
-  <p>La etiqueta SCRIPT</p>
-
-  <script type="text/javascript">
-  //Aquí escribiremos todo nuestro código JS
-  </script>
-
-</body> -->
-<!-- example 1  end-->
-
-
-<!-- example 2  start-->
 <body>
 
-  <h1>Intro a JS</h1>
+  <h1>Funciones</h1>
 
-  <p>La etiqueta SCRIPT</p>
+  <button id="boton_saludo" type="button" name="button">Click para saludar</button>
+
+  <p id="demo">  </p>
+
 
   <script type="text/javascript">
-  //Aquí escribiremos todo nuestro código JS
+  //guardamos la etiqueta con el id "boton_saludo" en una variable
+  var boton_saludo = document.getElementById('boton_saludo');
+
+  function saludarAlUsuario() {
+    document.getElementById('demo').innerHTML = "Hola Usuario";
+  }
+
+  //llamamos a nuestra variable "boton_saludo" que contiene el boton. Y le agregamos el atributo .onclick
+  //Despues le damos la responsabilidad de llamar a la funcion.
+  boton_saludo.onclick = function(){
+    saludarAlUsuario();
+  }
+
   </script>
 
 </body>
-<!-- example 2  end-->
+
+
 
 </html>
