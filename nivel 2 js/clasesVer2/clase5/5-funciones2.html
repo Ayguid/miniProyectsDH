@@ -16,9 +16,10 @@
 
       //importate, aclarar el scope de las variables.
       function validarEdad() {
-        var edad = prompt('ingresa tu edad');//este metodo nos sirve para capturar informacion del usuario
+        var password ="javascript"
+        var respuesta = prompt('ingresa tu password');//este metodo nos sirve para capturar informacion del usuario
         var mensaje = "No puedes logearte"
-        if (edad>=16) {//explicar el mayor o igual
+        if (respuesta == password) {//explicar el ==
             mensaje="Puedes logearte"
         }
         document.getElementById("demo").innerHTML = mensaje;

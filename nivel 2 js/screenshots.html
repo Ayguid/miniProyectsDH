@@ -3,35 +3,69 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <style media="screen">
+  .btn{
+    padding: 10px;
+    display: inline;
+    border-radius: 2px;
+    font-family: "Arial";
+    border: 0;
+    margin: 0 10px;
+    background: red;
+    font-size: 15px;
+    line-height: 15px;
+    color: white;
+    width: auto;
+    height: auto;
+    box-sizing: content-box;
+  }
+  #resultado{
+    border: 2px solid rgb(59, 59, 64);
+    float: left;
+    padding: 20px;
+    border-radius: 3px;
+  }
+  .clear{
+    clear: both;
+  }
+  </style>
 </head>
 
 
 <body>
 
-  <h1>Funciones</h1>
+  <h1>Condiciones 2.0</h1>
 
-  <button id="boton_saludo" type="button" name="button">Click para saludar</button>
+  <h2 id="resultado">Click en el puntaje para ver si batieron el record</h2>
+  <div class="clear"></div>
+  
+  <br>
 
-  <p id="demo">  </p>
+  <h2>Jugador 1, Puntaje: <span class="btn" onclick="validarPuntos()">30</span> </h2>
+  <h2>Jugador 2, Puntaje: <span class="btn" onclick="validarPuntos()">60</span> </h2>
+  <h2>Jugador 3, Puntaje: <span class="btn" onclick="validarPuntos()">40</span> </h2>
 
+  <script>
 
-  <script type="text/javascript">
-  //guardamos la etiqueta con el id "boton_saludo" en una variable
-  var boton_saludo = document.getElementById('boton_saludo');
+  function validarPuntos() {
+    var puntos = event.target.innerHTML; //capturamos el valor dentro de la etiqueta
+    var record = 50;  //declaramos un valor de 50 para nuestro "record"
+    var mensaje = " "; //declaramos una variable vacia para el valor a mostrar
 
-  function saludarAlUsuario() {
-    document.getElementById('demo').innerHTML = "Hola Usuario";
-  }
-
-  //llamamos a nuestra variable "boton_saludo" que contiene el boton. Y le agregamos el atributo .onclick
-  //Despues le damos la responsabilidad de llamar a la funcion.
-  boton_saludo.onclick = function(){
-    saludarAlUsuario();
+    if (puntos > record) {//preguntamos si los puntos superaron al record
+      mensaje = "Supero el record!";
+    }else{//si no supero el record
+      mensaje = "No supero el record!";
+    }
+    //mostramos en el elemento HTML con id "resultado" el mensaje guardado en nuestra variable
+    document.getElementById('resultado').innerHTML = mensaje;
   }
 
   </script>
 
 </body>
+
+
 
 
 

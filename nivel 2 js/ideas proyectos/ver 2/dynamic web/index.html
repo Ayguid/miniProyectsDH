@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      background-image: url(https://miro.medium.com/max/720/1*LjR0UrFB2a__5h1DWqzstA.png);
+      background-position:center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .panelLateral  {
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      height: 250px;
+      top: 0;
+      left: 0;
+      background-color: rgba(26, 25, 25, 0.88);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .panelLateral a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .panelLateral a:hover {
+      color: #f1f1f1;
+    }
+
+    .panelLateral .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+    }
+
+    .openbtn:hover {
+      background-color:#444;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="panelLateral" class="panelLateral">
+    <a href="#" class="closebtn" onclick="cerrarNavBar()">×</a>
+    <a href="#">Item</a>
+    <a href="#">Otro Item</a>
+    <a href="#">Contacto</a>
+    <a href="#">Faq</a>
+  </div>
+  <!-- sacar el nombre de la funcion para el ejericio del atributo -->
+  <button class="openbtn" onclick="abrirNavBar()">☰</button>
+  <h2>Nav-Bar con JS!</h2>
+  <p>Click en el símbolo para abri el menu.</p>
+
+  <script>
+    var navBar = document.getElementById("panelLateral");//sacar para el ejericio
+
+    function abrirNavBar() {
+      navBar.style.width = "250px";
+    }
+
+    function cerrarNavBar() {
+      navBar.style.width = "0";//sacar para el ejericio
+    }
+  </script>
+
+</body>
+</html>

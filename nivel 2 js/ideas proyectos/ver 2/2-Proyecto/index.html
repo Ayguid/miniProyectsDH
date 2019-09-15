@@ -10,46 +10,86 @@
   <h1>Mi Bloc de Notas</h1>
 
   <div id="" class="hoja floating">
+    <select class="" name="color" onchange="cambiarColor()">
+      <option value="">--</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+    </select>
     <div class="contenido" onclick="ingresarContenido()">
       Ingrese un recordatorio
     </div>
   </div>
   <div id="" class="hoja floating">
+    <select class="" name="color" onchange="cambiarColor()">
+      <option value="">--</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+    </select>
     <div class="contenido" onclick="ingresarContenido()">
       Ingrese un recordatorio
     </div>
   </div>
   <div id="" class="hoja floating">
+    <select class="" name="color" onchange="cambiarColor()">
+      <option value="">--</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+    </select>
     <div class="contenido" onclick="ingresarContenido()">
       Ingrese un recordatorio
     </div>
   </div>
   <div id="" class="hoja floating">
+    <select class="" name="color" onchange="cambiarColor()">
+      <option value="">--</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+    </select>
+    <div class="contenido" onclick="ingresarContenido()">
+      Ingrese un recordatorio
+    </div>
+  </div>
+  <div id="" class="hoja floating">
+    <select class="" name="color" onchange="cambiarColor()">
+      <option value="">--</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+    </select>
+    <div class="contenido" onclick="ingresarContenido()">
+      Ingrese un recordatorio
+    </div>
+  </div>
+  <div id="" class="hoja floating">
+    <select class="" name="color" onchange="cambiarColor()">
+      <option value="">--</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+    </select>
+    <div class="contenido" onclick="ingresarContenido()">
+      Ingrese un recordatorio
+    </div>
+  </div>
+  <div id="" class="hoja floating">
+    <select class="" name="color" onchange="cambiarColor()">
+      <option value="">--</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+    </select>
+    <div class="contenido" onclick="ingresarContenido()">
+      Ingrese un recordatorio
+    </div>
+  </div>
+  <div id="" class="hoja floating">
+    <select class="" name="color" onchange="cambiarColor()">
+      <option value="">--</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+    </select>
     <div class="contenido" onclick="ingresarContenido()">
       Ingrese un recordatorio
     </div>
   </div>
 
-  <div id="" class="hoja floating">
-    <div class="contenido" onclick="ingresarContenido()">
-      Ingrese un recordatorio
-    </div>
-  </div>
-  <div id="" class="hoja floating">
-    <div class="contenido" onclick="ingresarContenido()">
-      Ingrese un recordatorio
-    </div>
-  </div>
-  <div id="" class="hoja floating">
-    <div class="contenido" onclick="ingresarContenido()">
-      Ingrese un recordatorio
-    </div>
-  </div>
-  <div id="" class="hoja floating">
-    <div class="contenido" onclick="ingresarContenido()">
-      Ingrese un recordatorio
-    </div>
-  </div>
 
   <script type="text/javascript">
   //
@@ -62,6 +102,13 @@
       hoja.innerHTML = contenido;
     }
 
+  }
+
+
+  function cambiarColor() {
+    var select = event.target;
+    var color = select.value; //mostrar en el glosario un ejemplo de esto
+    select.parentElement.style.backgroundColor = color; //ejericio para ver el diagrama del DOM y ver si pueden lograr entender esto
   }
 
   </script>
