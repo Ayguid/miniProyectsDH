@@ -106,7 +106,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <!-- The Modal -->
     <div id="myModal" class="modal">
       <span id="cerrar" class="close">&times;</span>
-      <img class="modal-content" id="img01">
+      <img class="modal-content" id="img_modal">
       <div id="caption"></div>
     </div>
 
@@ -116,7 +116,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
     function abrirEnModal() {
       var img = event.target;
-      var modalImg = document.getElementById("img01");
+      var modalImg = document.getElementById("img_modal");
       var captionText = document.getElementById("caption");
       modal.style.display = "block";
       modalImg.src = img.src;
