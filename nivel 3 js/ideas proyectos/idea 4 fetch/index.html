@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <div class="movie">
+    Titulo : <span id="title"></span><br>
+    Fecha de estreno : <span id="release_Date"></span><br>
+  </div>
+
+
+  <script type="text/javascript">
+  
+    var titleContainer = document.getElementById('title');
+    var dateContainer = document.getElementById('release_Date');
+
+    fetch('https://ayguid.github.io/miniProyectsDH/nivel%203%20js/ideas%20proyectos/movies.json')
+
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      // Los datos los trabajamos en este area
+      filterByTitle(data, 'Big');
+    })
+    .catch(err => {
+      // Los errores los trabajamos en este area
+    });
+
+
+    function filterByTitle(dataResponse, title) {
+      // var result = dataResponse.filter(d => d.Title == title);    //mas facil, pero no saben ES6.
+      var result = dataResponse.filter(function(d){
+        return d.Title == title;
+      });
+      // dataContainer.innerHTML= JSON.stringify(data);
+      titleContainer.innerHTML= result[0].Title;
+      dateContainer.innerHTML= result[0].Release_Date;
+      console.log(result);
+    }
+
+
+  </script>
+</body>
+</html>
