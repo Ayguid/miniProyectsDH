@@ -13,7 +13,7 @@
 
 
   <script type="text/javascript">
-  
+
     var titleContainer = document.getElementById('title');
     var dateContainer = document.getElementById('release_Date');
 
@@ -24,7 +24,7 @@
     })
     .then(data => {
       // Los datos los trabajamos en este area
-      filterByTitle(data, 'Big');
+      filterByTitle(data, 'Big');//llamamos a nuestra funcion filterByTitle() que toma dos parametros.
     })
     .catch(err => {
       // Los errores los trabajamos en este area

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  nav {
+    background-color: #2371b7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(76, 162, 232)), to(rgb(35, 113, 183)));
+    background-image: -webkit-linear-gradient(top, rgb(76, 162, 232), rgb(35, 113, 183));
+    background-image: -moz-linear-gradient(top, rgb(76, 162, 232), rgb(35, 113, 183));
+    background-image: -o-linear-gradient(top, rgb(76, 162, 232), rgb(35, 113, 183));
+    background-image: -ms-linear-gradient(top, rgb(76, 162, 232), rgb(35, 113, 183));
+    background-image: linear-gradient(top, rgb(76, 162, 232), rgb(35, 113, 183));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#4ca2e8', EndColorStr='#2371b7');
+    padding-left: 200px;
+  }
+  /** Button Style **/
+  .button {
+    /** Font Style **/
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-transform:uppercase;
+    font-size:14px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    text-transform:uppercase;
+    text-shadow:rgba(0, 0, 0, 0.30) 0 -1.25px 0;
+    /** Button Style **/
+    display:-moz-inline-stack;
+    -webkit-font-smoothing:antialiased;
+    display:inline-block;
+    vertical-align:middle;
+    vertical-align:auto;
+    zoom:1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border:1px solid #13619f;
+    background: #2371b7;
+    padding:11px 20px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -ms-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
+    -webkit-box-shadow:rgba(255, 255, 255, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.3) 0 1px 0;
+    -moz-box-shadow:rgba(255, 255, 255, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.3) 0 1px 0;
+    box-shadow:rgba(255, 255, 255, 0.3) 0 1px 0, inset rgba(255, 255, 255, 0.3) 0 1px 0;
+  }
+
+  /** Active State Style **/
+  .button:active {
+    border-color:#083559;
+    -webkit-box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
+    -moz-box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
+    box-shadow:rgba(255, 255, 255, 0.2) 0 1px 0, inset rgba(0, 0, 0, 0.25) 0 1px 4px;
+
+  }
+
+  .toggle-content {
+	display: none;
+	height: 0;
+  opacity: 0;
+	overflow: hidden;
+	transition: height 350ms ease-in-out, opacity 750ms ease-in-out;
+}
+
+.toggle-content.is-visible {
+	display: block;
+	height: auto;
+  opacity: 1;
+}
+
+
+
+/* form */
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a id ="logIn" class="toggle button" href="#user_panel">Log In</a>
+  </nav>
+
+
+  <div id="user_panel" class="toggle-content" >
+    Here's some text we want to toggle visibility of.
+  </div>
+
+
+  <div id="id01" class="modal">
+
+  <form class="modal-content animate" action="#" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+  <script type="text/javascript">
+  var show = function (elem) {
+  	var getHeight = function () {
+  		elem.style.display = 'block';
+  		var height = elem.scrollHeight + 'px';
+  		elem.style.display = '';
+  		return height;
+  	};
+  	var height = getHeight();
+  	elem.classList.add('is-visible');
+  	elem.style.height = height;
+  	window.setTimeout(function () {
+  		elem.style.height = '';
+  	}, 350);
+  };
+
+  var hide = function (elem) {
+  	elem.style.height = elem.scrollHeight + 'px';
+  	window.setTimeout(function () {
+  		elem.style.height = '0';
+  	}, 1);
+  	window.setTimeout(function () {
+  		elem.classList.remove('is-visible');
+  	}, 350);
+  };
+
+  var toggle = function (elem, timing) {
+  	if (elem.classList.contains('is-visible')) {
+  		hide(elem);
+  		return;
+  	}
+  	show(elem);
+  };
+
+  // Listen for click events
+  document.addEventListener('click', function (event) {
+  	if (!event.target.classList.contains('toggle')) return;
+  	event.preventDefault();
+  	var content = document.querySelector(event.target.hash);
+  	if (!content) return;
+  	toggle(content);
+  }, false);
+
+  </script>
+
+  <!-- modal form -->
+  <script>
+  var modal = document.getElementById('id01');
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+
+</body>
+</html>

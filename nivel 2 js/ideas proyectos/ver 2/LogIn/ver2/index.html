@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Covered+By+Your+Grace" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style media="screen">
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a id ="myApp" class="button" href="#">My App</a>
+  </nav>
+
+  <div id="logIn" class="formContent animate">
+    <form id="lgForm" class="" action="#">
+      <div class="imgcontainer">
+        <img src="https://www.neolutionesport.com/wp-content/uploads/2017/03/default-avatar-knives-ninja.png" alt="Avatar" class="avatar">
+      </div>
+      <div class="containerLog">
+        <label for="uname"><b>Username</b></label>
+        <input id="usuario" type="text" placeholder="Ingresar su usuario" name="usuario" required>
+        <label for="password"><b>Password</b></label>
+        <input id="password" type="password" placeholder="Password" name="password" required>
+        <button onclick="logIn()">Login</button>
+      </div>
+    </form>
+  </div>
+
+
+  <div id="myModal" class="modal">
+    <span id="cerrar" class="close">&times;</span>
+    <img class="modal-content" id="img_modal">
+    <div id="caption"></div>
+  </div>
+
+  <div id="panelUsuario">
+
+      <header>
+        <div class="container animate">
+
+          <div class="profile">
+
+            <div class="profile-image">
+              <img src="https://i.stack.imgur.com/34AD2.jpg" alt="">
+            </div>
+
+            <div class="profile-user-settings">
+              <h1 class="profile-user-name">Nombre: <span id="user_name">Jon Doe</span>  </h1>
+              <button class="btn profile-edit-btn">Edit Profile</button>
+              <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+            </div>
+
+            <div class="profile-stats">
+              <ul>
+                <li><span class="profile-stat-count">164</span> posts</li>
+                <li><span class="profile-stat-count">188</span> followers</li>
+                <li><span class="profile-stat-count">206</span> following</li>
+              </ul>
+            </div>
+
+            <div class="profile-bio">
+              <p><span class="profile-real-name">Nombre</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️</p>
+            </div>
+
+          </div>
+        </div>
+      </header>
+
+
+      <main>
+        <div class="container animate">
+
+          <div class="gallery">
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="" >
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 0</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 0</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i></li>
+                </ul>
+              </div>
+            </div>
+
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li onclick="likePost()" class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" > 42</i> </li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 1</li>
+                </ul>
+              </div>
+              <div class="gallery-item-type">
+                <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+              </div>
+            </div>
+
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 38</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 0</li>
+                </ul>
+              </div>
+              <div class="gallery-item-type">
+                <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+              </div>
+            </div>
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 47</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 1</li>
+                </ul>
+              </div>
+              <div class="gallery-item-type">
+                <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+              </div>
+            </div>
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 94</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 3</li>
+                </ul>
+              </div>
+            </div>
+
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 52</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 4</li>
+                </ul>
+              </div>
+              <div class="gallery-item-type">
+                <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+              </div>
+            </div>
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 66</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 65</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 0</li>
+                </ul>
+              </div>
+              <div class="gallery-item-type">
+                <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+              </div>
+            </div>
+
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 34</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 1</li>
+                </ul>
+              </div>
+            </div>
+
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 41</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 0</li>
+                </ul>
+              </div>
+            </div>
+
+
+            <div class="gallery-item" tabindex="0">
+              <img src="https://www.hygeiahmo.com/wp-content/themes/uplift/images/default-thumb.png" class="gallery-image" alt="">
+              <div class="gallery-item-info">
+                <ul>
+                  <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart likes" aria-hidden="true" onclick="likePost()"> 30</i></li>
+                  <li class="gallery-item-likes"><i class="fas fa-plus" onclick="abrirEnModal()"></i></li>
+                  <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+                </ul>
+              </div>
+              <div class="gallery-item-type">
+                <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+              </div>
+            </div>
+
+          </div>
+          <div class="loader"></div>
+        </div>
+      </main>
+
+  </div>
+
+  <script type="text/javascript">
+  // hidden code start
+  // function alertar(param) {//necesario crear un alert?
+  //   alert(param);
+  // }
+  function buscarImagenEnPost(objeto) {
+    return objeto.parentNode.parentNode.parentNode.previousSibling.previousSibling;
+  }
+  //para que los chicos no tengan que entender el preventDefault()..lo frenamos al form desde el hidden code
+  document.getElementById('lgForm').onsubmit = function(){
+    event.preventDefault();
+  }
+  // hidden code end
+</script>
+
+<script type="text/javascript">
+//codigo alumno
+//a estas variables todas nuestras funciones podran llamarlas porque son globales.
+var userName='Batman';
+var passWord='Gotham';
+
+function esconderElemento(elmentoId) {//creamos una funcion para esconder elementos
+  document.getElementById(elmentoId).style.display='none';
+}
+
+function mostrarElemento(elmentoId) {//creamos una funcion para mostrar elementos
+  document.getElementById(elmentoId).style.display='block';
+}
+
+function cambiarTexto(elmentoId, texto) {//creamos una funcion para cambiarle el texto a un elemento
+  document.getElementById(elmentoId).innerHTML = texto;
+}
+
+
+function logIn() {
+  var usrValue = document.getElementById('usuario').value; //accedemos al valor dentro del input del Username
+  var passValue = document.getElementById('password').value; //accedemos al valor dentro del input del Password
+  if ( usrValue == userName  &&  passValue == passWord ) {//en caso de ser correctos los datos
+    esconderElemento('logIn');
+    mostrarElemento('panelUsuario');
+    cambiarTexto('myApp', 'Logged');
+  }else {//en caso de ser incorrectos los datos
+    alert('Datos incorrectos');
+  }
+}
+
+function likePost() {//para repasar event.target y classList
+  if (event.target.classList.contains('liked')) {
+    event.target.classList.remove('liked');
+    event.target.innerHTML = " "+(parseInt(event.target.innerHTML)-1);
+  }else {
+    event.target.classList.add('liked');
+    event.target.innerHTML = " "+(parseInt(event.target.innerHTML)+1);//utilizamos este metodo "parseInt()" para pasar el "texto de html" a numeros y sumarle un like
+  }
+}
+
+var modal = document.getElementById("myModal");
+
+function abrirEnModal() {
+  var img = buscarImagenEnPost(event.target); //esta funcion nos devuelve que imagen tiene asignada ese post.
+  var modalImg = document.getElementById("img_modal");
+  var captionText = document.getElementById("caption");
+  modal.style.display = "block";
+  modalImg.src = img.src;
+  captionText.innerHTML = img.alt;
+}
+
+//Cerramos el modal cuando el usuario hace click en la x
+var span = document.getElementById("cerrar");
+span.onclick = function() {//Que tiene de distinto este modo de escuchar el click?
+  modal.style.display = "none";
+}
+
+</script>
+
+
+
+</body>
+</html>
