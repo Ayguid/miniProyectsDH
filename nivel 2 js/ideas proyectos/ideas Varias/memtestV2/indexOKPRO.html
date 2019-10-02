@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <style media="screen">
+  @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+  .card{
+    float: left;
+    width: 23%;
+    margin: 1%;
+    height: 30vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s all ease-out;
+  }
+  .card:hover{
+    transform: scale(0.96);
+  }
+  .cover{
+    background-image: url('https://cdn1.iconfinder.com/data/icons/graphorama-playing-cards-3/80/back-512.png');
+  }
+  #display{
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    z-index: 100;
+    color: white;
+  }
+
+  </style>
+</head>
+<body id="body">
+
+  <div id="display">
+    <br>
+    CLICKS: <span id="clicks_container">0</span><br><br>
+    SCORE: <span id="score_container">0</span><br><br>
+  </div>
+
+  <div id="success_container" class="">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div>
+
+  <div id="gameContainer"></div>
+
+
+  <script type="text/javascript">
+  //variables globales
+  var game_container = document.getElementById('gameContainer');
+  var card_one, card_two;
+  var turn = true;
+  var lock_board = false;
+  var clicks = 0;
+  var score = 0;
+  var cards=[
+    'http://chetart.com/blog/wp-content/uploads/2016/04/cropped-cropped-siteicon.jpg',
+    'http://chetart.com/blog/wp-content/uploads/2019/09/BigWheelPinCarded640.png',
+    'http://chetart.com/blog/wp-content/uploads/2019/09/TotoroPedalPinCarded640.png',
+    'http://chetart.com/blog/wp-content/uploads/2019/05/SkellingtonShadowbox1Blog.png',
+    'https://media.giphy.com/media/WrVOtWEay7fJS/giphy.gif',
+    'https://media1.tenor.com/images/6135aa955cf464d4b8f538310c1268fe/tenor.gif?itemid=5722800'
+  ];
+
+  function duplicateArray() {//duplicamos las cartas en el array
+    b=[];
+    for(var i = 0; i< cards.length;++i){
+      b.push(cards[i]);
+      b.push(cards[i]);
+    }
+    cards = b;
+  }
+
+  //funcion para crear el tablero
+  function createBoard() {
+    cards.sort(function() {//mezclamos las cartas...este metodo no es muy random,,,pero bueh
+      return .5 - Math.random();
+    });
+    cards.forEach(function(elemento) {
+      var div = document.createElement('div');
+      div.dataset.imgCard = elemento;
+      div.classList.add('card', 'cover');
+      game_container.appendChild(div);
+    });
+  }
+
+  //Escuchamos los click en nuestro tablero
+  game_container.onclick=function(event){
+    if(event.target==game_container || event.target.classList.contains('disabled') || lock_board)return;
+    clicks++;
+    document.getElementById('clicks_container').innerHTML=clicks;
+    toggleCard(event.target);
+    if (!turn) {
+      checkIfMatch();
+    }
+    turn = !turn;
+  };
+
+
+  function toggleCard(elementoHTML) {
+    if (turn) {
+      card_one=elementoHTML;
+      card_one.style.backgroundImage="url("+card_one.dataset.imgCard+")";
+    }else {
+      card_two=elementoHTML;
+      card_two.style.backgroundImage="url("+card_two.dataset.imgCard+")";
+    }
+    card_one.classList.toggle('disabled');//explicacion,,,,,rara
+  }
+
+
+  function disableCards() {
+    card_one.classList.add('disabled');
+    card_two.classList.add('disabled');
+  }
+
+
+  function resetCards() {
+    card_one.style.backgroundImage='';
+    card_two.style.backgroundImage='';
+    card_one.classList.add('cover');
+    card_two.classList.add('cover');
+  }
+
+  function checkIfMatch() {
+    if (card_one.dataset.imgCard == card_two.dataset.imgCard) {
+      score+=1800;
+      document.getElementById('score_container').innerHTML=score;
+      disableCards();
+      document.getElementById('success_container').classList.add('pyro');
+        setTimeout(function(){
+          document.getElementById('success_container').classList.remove('pyro');
+        }, 3000);
+      }else {
+        score-=800;
+        document.getElementById('score_container').innerHTML=score;
+        lock_board = true;//no queremos que hagan click mientras se dan vuelta las tarjetas
+        document.getElementById('body').classList.add('wrong');
+        setTimeout(function(){
+          lock_board = false;
+          resetCards();
+          document.getElementById('body').classList.remove('wrong');
+        }, 700);
+      }
+      }
+
+    //flow
+    //duplicamos las imagenes
+    duplicateArray();
+    //ejecutamos la funcion de crear tablero
+    createBoard();
+    </script>
+
+
+  </body>
+  </html>

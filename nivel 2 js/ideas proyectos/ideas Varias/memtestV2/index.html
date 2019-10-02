@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  .card{
+    float: left;
+    width: 23%;
+    margin: 1%;
+    height: 30vh;
+    background-image: url('https://cdn1.iconfinder.com/data/icons/graphorama-playing-cards-3/80/back-512.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .cover{
+  }
+  </style>
+</head>
+<body>
+
+
+
+
+  <div id="game_container">
+
+  </div>
+
+
+  <script type="text/javascript">
+  //variables globales
+  var game_container = document.getElementById('game_container');
+  var card_one, card_two;
+  var turno = true;
+
+  const cards=[
+    {class:'yellow', img:'http://chetart.com/blog/wp-content/uploads/2016/04/cropped-cropped-siteicon.jpg'},
+    {class:'yellow', img:'http://chetart.com/blog/wp-content/uploads/2016/04/cropped-cropped-siteicon.jpg'},
+    {class:'green', img:'http://chetart.com/blog/wp-content/uploads/2019/09/BigWheelPinCarded640.png'},
+    {class:'green', img:'http://chetart.com/blog/wp-content/uploads/2019/09/BigWheelPinCarded640.png'},
+    {class:'violet', img:'http://chetart.com/blog/wp-content/uploads/2019/09/TotoroPedalPinCarded640.png'},
+    {class:'violet', img:'http://chetart.com/blog/wp-content/uploads/2019/09/TotoroPedalPinCarded640.png'},
+    {class:'orange', img:'http://chetart.com/blog/wp-content/uploads/2019/05/SkellingtonShadowbox1Blog.png'},
+    {class:'orange', img:'http://chetart.com/blog/wp-content/uploads/2019/05/SkellingtonShadowbox1Blog.png'}
+  ];
+
+  cards.sort(function() {//mezclamos las cartas...este metodo no es muy random,,,pero bueh
+    return .5 - Math.random();
+  });
+  // console.log(cards);//vemos el resultado
+
+
+  //funcion para crear el tablero
+  function createBoard() {
+    cards.forEach(function(elemento) {
+      // console.log(elemento);
+      var div = document.createElement('div');
+      div.dataset.imgCard = elemento.img;
+      // div.style.backgroundImage='url('+ elemento.img +')';
+      div.classList.add('card', elemento.class);
+      div.innerHTML=elemento.class;//sacar esta parte
+      game_container.appendChild(div);
+    });
+  }
+
+  //flow
+  //ejecutamos la funcion de crear tablero
+  createBoard();
+  //Escuchamos los click en nuestro tablero
+  game_container.onclick=function(event){
+    if(event.target==game_container || event.target.classList.contains('canceled'))return;
+    checkIfMatch(event.target);
+  };
+
+
+  function checkIfMatch(elementoHTML) {
+    console.log(turno);
+    if (turno) {
+      card_one=elementoHTML;
+      card_two=false;
+    }else {
+      card_two=elementoHTML;
+    }
+    if (card_two) {
+      if (card_one.classList.value == card_two.classList.value) {
+        alert('yeaaahh Matchean vieja');
+        cancelMatchedCards();
+      }
+    }
+    turno = !turno;//pasamos el turno a false. Mas facil que contar clicks para algo par.
+    console.log(turno);
+    console.log(card_one,card_two);
+  }
+
+
+  function cancelMatchedCards() {
+    card_one.classList.add('canceled');
+    card_two.classList.add('canceled');
+  }
+
+  </script>
+
+
+</body>
+</html>
