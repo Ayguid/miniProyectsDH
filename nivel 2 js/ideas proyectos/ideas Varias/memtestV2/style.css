@@ -235,11 +235,3 @@ body {
         transform: translate3d(5px, 0, 0);
       }
     }
-    video#bgVideo {
-      position: absolute; // Play the video in full screen mode
-      top: 0px;
-      left: 0px;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1; // Put the video behind all other elements
-    }

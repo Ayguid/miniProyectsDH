@@ -29,8 +29,6 @@
   }
   #display{
     font-family: 'Press Start 2P', cursive;
-    /* position: absolute;
-    z-index: 100; */
     float: left;
     width: 20%;
     color: white;
@@ -83,6 +81,8 @@
   var matched=cardQty=1;
   var seconds=0;
   var startTimer;
+  var sound = document.createElement("audio");
+  sound.src = 'alert.mp3';
 
   function duplicateArray(qty) {//duplicamos las cartas en el array
     b=[];
@@ -159,6 +159,9 @@
     if (card_one.dataset.imgCard == card_two.dataset.imgCard) {
       score+=1800;
       matched--;
+      sound.pause();
+      sound.currentTime = 0;
+      sound.play();
       document.getElementById('score_container').innerHTML=score;
       disableCards();
       document.getElementById('success_container').classList.add('pyro');
@@ -186,8 +189,9 @@
   }
 
   function levelUp() {
+
     if (cardQty==cards.length) {
-      if (score>localStorage.getItem('high-score')) {
+      if (score>JSON.parse(localStorage.getItem('high-score')).highScore) {
         var userName = prompt('Ingrese su nombre');
         localStorage.setItem('high-score', JSON.stringify({
           username: userName,
