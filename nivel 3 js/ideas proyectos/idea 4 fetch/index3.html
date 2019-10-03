@@ -201,12 +201,11 @@ function buildDivs(resultado) {
     var div=document.createElement('div');
     var iframe=document.createElement('iframe');
     iframe.setAttribute("src", resultado[i].url);
-    iframe.style.width = "640px";
+    iframe.style.width = "100%";
     iframe.style.height = "480px";
     div.appendChild(iframe);
     div.classList.add('trailer');
     trailers.appendChild(div);
-    // resultado[i]
   }
 }
 
