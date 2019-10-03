@@ -427,3 +427,12 @@ img {
 	margin-top: 3rem;
 }
 }
+
+
+.trailer{
+	float: left;
+	width: 48%;
+	margin: 1%;
+	height: 20vh;
+	background-color: red;
+}

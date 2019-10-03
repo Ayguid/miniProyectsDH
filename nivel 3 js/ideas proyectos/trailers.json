@@ -6,7 +6,7 @@
     "rating":"5",
     "director":"Francis",
     "actors":["Pepe", "Martin"],
-    "url":"https://youtu.be/kGM4uYZzfu0"
+    "url":"https://youtu.com/embed/kGM4uYZzfu0"
   },
   {
     "title":"Movie2",
@@ -15,6 +15,6 @@
     "rating":"2",
     "director":"Max",
     "actors":["Pepe", "Martin"],
-    "url":"https://youtu.be/cW39B5rAFnc"
+    "url":"https://youtu.com/embed/cW39B5rAFnc"
   }
 ]
