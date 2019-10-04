@@ -36,7 +36,6 @@
       var result = dataResponse.filter(function(d){
         return d.Title == title;
       });
-      // dataContainer.innerHTML= JSON.stringify(data);
       titleContainer.innerHTML= result[0].Title;
       dateContainer.innerHTML= result[0].Release_Date;
       console.log(result);

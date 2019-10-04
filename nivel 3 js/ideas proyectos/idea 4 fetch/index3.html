@@ -36,15 +36,11 @@
             <p class="text-lg">
               MI MOVIE APP
             </p>
-            <a id="test" href="#" class="btn btn-lg tab-item">PROBAR</a>
+            <a id="tab-2" href="#" class="btn btn-lg tab-item">PROBAR</a>
           </div>
           <img src="https://i.ibb.co/J2xDJV7/tab-content-1.png" alt="" />
         </div>
       </div>
-
-
-
-
 
       <!-- Tab Content 2 -->
       <div id="tab-2-content" class="tab-content-item">
@@ -60,8 +56,7 @@
                   <span class="a-field__label">Bucar Trailer</span>
                 </span>
               </label>
-
-            <a href="#" class="btn btn-lg" onclick="buscarPelicula()">Buscar</a>
+            <a href="#" class="btn btn-lg" onclick="filtrarPorGenero()">Buscar</a>
           </div>
         </div>
         <div class="">
@@ -82,11 +77,16 @@
       <div id="tab-3-content" class="tab-content-item">
         <div class="text-center">
           <p class="text-lg">
-            Choose
+            Estrenos
           </p>
-          <a href="#" class="btn btn-lg">Watch</a>
+          <!-- <a href="#" class="btn btn-lg">Watch</a> -->
         </div>
-
+        <div id="estrenos">
+          <!-- <div class="movie">
+            Titulo : <span id="title"></span><br>
+            Fecha de estreno : <span id="release_Date"></span><br>
+          </div> -->
+        </div>
 
       </div>
     </div>
@@ -97,12 +97,11 @@
 <script type="text/javascript" src ="app.js"></script>
 <script type="text/javascript">
 
+var query = document.getElementById('query');
 var trailers = document.getElementById('trailers');
+var estrenos = document.getElementById('estrenos');
+var movies;
 
-
-
-function buscarPelicula() {
-  var query = document.getElementById('query');
   fetch('https://ayguid.github.io/miniProyectsDH/nivel%203%20js/ideas%20proyectos/trailers.json')
   .then(response => {
     return response.json();
@@ -110,52 +109,42 @@ function buscarPelicula() {
   .then(data => {
     // Los datos los trabajamos en este area
     console.log(data);
-    // var pedido = filterByTitle(data, query.value);
-    var pedido = filterByGenre(data, query.value);
-    buildDivs(pedido);
+    movies = data;
+    construirDivs(movies, estrenos, 'estreno');
+    console.log(movies);
   })
   .catch(err => {
     // Los errores los trabajamos en este area
     console.log(err);
   });
-}
 
 
 
-function buildDivs(resultado) {
-  console.log(resultado);
-  trailers.innerHTML='';
-  for (var i = 0; i < resultado.length; i++) {
+
+function construirDivs(datos, donde, clase) {
+  console.log(datos);
+  donde.innerHTML='';
+  for (var i = 0; i < datos.length; i++) {
     var div=document.createElement('div');
     var iframe=document.createElement('iframe');
-    iframe.setAttribute("src", resultado[i].url);
-    iframe.style.width = "100%";
-    iframe.style.height = "480px";
+    iframe.setAttribute("src", datos[i].url);
     div.appendChild(iframe);
-    div.classList.add('trailer');
-    trailers.appendChild(div);
+    div.classList.add(clase);
+    donde.appendChild(div);
   }
 }
 
 
 
 
-function filterByGenre(dataResponse, genre) {
-  // var result = dataResponse.filter(d => d.Title == title);    //mas facil, pero no saben ES6.
-  var result = dataResponse.filter(function(d){
-    return d.genre.toLowerCase() == genre.toLowerCase();
+function filtrarPorGenero() {
+  var result = movies.filter(function(m){
+    return m.genre.toLowerCase() ==  query.value.toLowerCase();
   });
-  return result;
+  construirDivs(result, trailers, 'trailer');
 }
 
 
-function filterByTitle(dataResponse, title) {
-  // var result = dataResponse.filter(d => d.Title == title);    //mas facil, pero no saben ES6.
-  var result = dataResponse.filter(function(d){
-    return d.title.toLowerCase() == title.toLowerCase();
-  });
-  return result;
-}
 
 
 </script>

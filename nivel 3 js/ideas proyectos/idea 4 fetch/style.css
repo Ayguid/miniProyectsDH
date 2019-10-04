@@ -428,21 +428,6 @@ img {
 }
 }
 
-#trailers{
-	overflow: hidden;
-}
-
-.trailer{
-	animation: slide-up 0.4s ease;
-	float: left;
-	width: 48%;
-	margin: 1%;
-	background-color: red;
-}
-
-.trailer iframe{
-	vertical-align:bottom;
-}
 
 
 
@@ -708,4 +693,32 @@ body{
 
 #query{
 	color: white;
+}
+
+#trailers{
+	overflow: hidden;
+}
+.estreno{
+	animation: slide-up 0.4s ease;
+	float: left;
+	width: 31.33%;
+	margin: 1%;
+	background-color: red;
+}
+.trailer{
+	animation: slide-up 0.4s ease;
+	float: left;
+	width: 48%;
+	margin: 1%;
+	background-color: red;
+}
+.trailer iframe{
+	width: 100%;
+	height: 480px;
+	vertical-align:bottom;
+}
+.estreno iframe{
+	width: 100%;
+	height: 250px;
+	vertical-align:bottom;
 }
