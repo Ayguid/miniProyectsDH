@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+
+
+  <p id="tijera" onclick="jugar()">Tijera</p>
+  <p id="papel" onclick="jugar()">Papel</p>
+  <p id="piedra" onclick="jugar()">Piedra</p>
+
+
+  <div id="resultado">
+
+  </div>
+
+  <script type="text/javascript">
+    var computadora="tijera";
+
+    function jugar() {
+      var mensaje='';
+      if (event.target.id == 'tijera') {
+        mensaje='Empataste';
+      }
+      if (event.target.id == 'papel') {
+        mensaje='Perdiste';
+      }
+      if (event.target.id == 'piedra') {
+        mensaje='Ganaste';
+      }
+      console.log(mensaje);
+    }
+  </script>
+  </body>
+</html>

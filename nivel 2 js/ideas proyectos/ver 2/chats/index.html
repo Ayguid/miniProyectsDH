@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    *{
+      box-sizing: border-box;
+      user-select: none;
+    }
+    div.container{
+      max-width: 50%;
+      margin-left: 25%;
+      background-color: grey;
+      padding: 10px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 67vh;
+    }
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    ul li{
+      display:inline-block;
+      clear: both;
+      padding: 20px;
+      border-radius: 30px;
+      margin-bottom: 2px;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .el{
+      background: #eee;
+      float: left;
+    }
+
+    .mio{
+      float: right;
+      background: #0084ff;
+      color: #fff;
+    }
+
+    .el + .mio{
+      border-bottom-right-radius: 5px;
+    }
+
+    .mio + .mio{
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .mio:last-of-type {
+      border-bottom-right-radius: 30px;
+    }
+    .controles{
+      margin-top: 50px;
+      max-width: 50%;
+      margin-left: 25%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+    }
+    </style>
+  </head>
+  <body>
+    <h1> Chat Machine</h1>
+
+    <div class="container">
+
+      <ul id="lista-de-msjs">
+        <li class="el">Estas aprendiendo a programar?</li>
+        <li class="mio">Si esta buenisimo!!!!</li>
+        <li class="el">Que estan viendo?</li>
+        <li class="mio">Javascript, HTML y CSS!! Es todo un mundo!</li>
+        <li class="mio">Todavia estoy con mis primeras clases</li>
+        <li class="el">Que bien! Despues me tenes que enseñar!!!</li>
+      </ul>
+
+
+
+
+    </div>
+    <div class="controles">
+      <button type="button" name="button" onclick="amigoResponde()">Amigo Responde</button>
+      <button type="button" name="button" onclick="responder()">Yo respondo</button>
+    </div>
+
+
+
+  <script type="text/javascript">
+  // hidden code start
+  function agregarMensaje(msj, clase) {
+    if(!msj)return;
+    var li = document.createElement('li');
+    if (clase == 'mio') {
+      li.classList.add('mio');
+    }else {
+      li.classList.add('el');
+    }
+    li.innerHTML = msj;
+    document.getElementById('lista-de-msjs').appendChild(li);
+  }
+  // hidden code end
+
+  function amigoResponde() {
+    var mensaje = prompt('Ingresa tu respuesta');
+    agregarMensaje(mensaje, 'el');
+  }
+
+  function responder() {
+    var mensaje = prompt('Ingresa tu respuesta');
+    agregarMensaje(mensaje, 'mio');
+  }
+
+  </script>
+
+  </body>
+  </html>

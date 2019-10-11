@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  .container {
+    height: 200px;
+    position: relative;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+  }
+
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="resultado" class=""></div>
+    <div class="vertical-center">
+      <button type="button" name="button" onclick="logIn()">BatCave</button>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+  var nombre = "Batman";
+  var apellido = "Wayne";
+
+  function logIn() {
+    var respuestaUsuario = prompt('Cual es su nombre?');
+    if (nombre == respuestaUsuario) {
+      var apellidoUsuario = prompt('Cual es su apellido?');
+      if (apellido == apellidoUsuario) {
+        document.getElementById('resultado').innerHTML = "Bienvenido " + nombre + " " + apellido;
+      }else {
+        document.getElementById('resultado').innerHTML = "Nombre no encontrado";
+      }
+    }
+    else {
+      document.getElementById('resultado').innerHTML = "NO!";
+    }
+  }
+
+  </script>
+</body>
+</html>

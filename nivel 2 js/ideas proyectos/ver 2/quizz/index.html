@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  *{
+    box-sizing: border-box;
+  }
+  h1{
+    text-align: center;
+    font-size: 60px;
+  }
+  #pregunta{
+    margin-top: 100px;
+    height: 40vh;
+    border: 2px solid rgb(65, 190, 160);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+  }
+  #respuesta{
+    margin-top: 100px;
+    width: 50%;
+    margin-left: 25%;
+  }
+  #alerta{
+        margin-top: 100px;
+        background-color: red;
+        font-size: 50px;
+  }
+  </style>
+</head>
+<body>
+  <h1>Quizz</h1>
+  <div id="pregunta" class="">
+
+  </div>
+
+  <button id="respuesta" type="button" name="button" onclick="responder()">Responder</button>
+
+  <div id="alerta" class="">
+
+  </div>
+
+  <script type="text/javascript">
+
+  var numeroDePregunta = 0;
+
+  var preguntas = [
+    {pregunta:'En que año se descubrio américa?', respuesta:'1492'},
+    {pregunta:'Cual era el apellido del inventor de la imprenta?', respuesta:'Gutenberg'},
+    {pregunta:'En que año llegamos a la luna?', respuesta:'1969'}
+  ];
+  
+  function mostrarPregunta() {
+    document.getElementById('pregunta').innerHTML = preguntas[numeroDePregunta].pregunta;
+  }
+
+  function responder() {
+    var respuesta = prompt('Ingrese su respuesta');
+    if (respuesta == preguntas[numeroDePregunta].respuesta) {
+      //esto deberian resolver start
+      document.getElementById('alerta').innerHTML = '';
+      numeroDePregunta ++;
+      mostrarPregunta();
+      //esto deberian resolver end
+    }else {
+      document.getElementById('alerta').innerHTML = 'Incorrecto';
+    }
+  }
+  //ejecutamos la funcion para mostrar la primer pregunta;
+  mostrarPregunta();
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- hidden -->
+  <!-- hidden end -->
+
+  <h1>Magic 8</h1>
+  <p>Escribe tu pregunta:</p>
+  <input type="text" id="input" />
+  <div class="eight-ball">
+    <div class="respuesta">
+      <p id="eight">8</p>
+      <p id="respuesta"></p>
+    </div>
+  </div>
+  <button id="button" onclick="preguntar()">
+    Preguntar
+  </button>
+
+
+
+  <script type="text/javascript">
+
+
+  // hidden code start
+  var input = document.getElementById("input");
+  var posiblesRespuestas = [
+    'Puede ser',
+    'Definitivamente',
+    'Definitivamente no!',
+    'Algun día!'
+  ];
+
+  function fraseRandom() {
+    if (input.value.length<1) {
+      vl = 'Ingresa una pregunta';
+    }else if(!input.value.includes('?')){
+      vl = 'Debes incluir el signo ?';
+    }else {
+      vl = posiblesRespuestas[ Math.floor( Math.random() * posiblesRespuestas.length) ];
+    }
+    return vl;
+  }
+  // hidden code end
+
+  //ellos tienen que hacer esta funcion; .... for ejemplo... declara una varible la cual guarde el resultado de la funcion fraseRandom() la cual te regalamos.
+  function preguntar() {
+    var frase = fraseRandom();
+    document.getElementById('eight').innerHTML='';
+    document.getElementById('respuesta').innerHTML = frase;
+  }
+  //
+
+  </script>
+
+</body>
+</html>

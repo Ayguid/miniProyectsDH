@@ -105,7 +105,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
-      <span id="cerrar" class="close">&times;</span>
+      <span id="cerrar" class="close" onclick="cerrarImagen()">&times;</span>
       <img class="modal-content" id="img_modal">
       <div id="caption"></div>
     </div>
@@ -124,8 +124,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     }
 
     //Cerramos el modal cuando el usuario hace click en la x
-    var span = document.getElementById("cerrar");
-    span.onclick = function() {//Que tiene de distinto este modo de escuchar el click?
+    function cerrarImagen() {//Que tiene de distinto este modo de escuchar el click?
       modal.style.display = "none";
     }
     </script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+
+  <button type="button" name="button" onclick="logIn()">LOGIN</button>
+
+  <div id="resultado" class="">
+
+  </div>
+
+  <script type="text/javascript">
+
+
+  var userName="Batman";
+
+  function logIn() {
+    var respuestaUsuario = prompt('Cual es su nombre?');
+    if (userName == respuestaUsuario) {
+      document.getElementById('resultado').innerHTML= "OK";
+    }
+    else {
+      document.getElementById('resultado').innerHTML= "NO!";
+    }
+  }
+
+  </script>
+  </body>
+</html>
