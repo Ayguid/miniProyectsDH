@@ -1,0 +1,165 @@
+*{
+  box-sizing: border-box;
+  cursor: crosshair;
+}
+html, body{
+  width: 100%;
+  background-image: url("img/mansion.jpg");
+  background-size: 100% 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+@keyframes particleAnimation
+{
+    from {
+        left: -100px;
+    }
+    to {
+        left: calc( 100% + 100px );
+    }
+}
+
+.particle{
+  position:fixed;
+  left:0px;
+  top:50px;
+  width:1px;
+  height:1px;
+  background-color:white;
+  position:fixed;
+  animation-name:particleAnimation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.particle::before{
+  position:absolute;
+  display:block;
+  content:"";
+  width:100px;
+  right:1px;
+  top:0px;
+  height:1px;
+  background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%);
+}
+.particle-1{
+  animation-duration:10s;
+}
+.particle-2{
+  animation-duration:5s;
+  top:60%;
+}
+.particle-3{
+  animation-duration:20s;
+  top:90%;
+}
+#top_nav{
+
+}
+#top_nav h2{
+  color: white;
+  text-align: center;
+}
+#top_nav h3{
+  color: red;
+  text-align: center;
+}
+#points_container, #click_container, #time_container{
+  color: white;
+}
+
+
+#game_container{
+  overflow: hidden;
+}
+
+
+.box{
+  width: 8%;
+  margin: 1%;
+  float: left;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: 0.5s opacity;
+}
+.box:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.box:hover{
+  filter: contrast(200%);
+}
+
+.show {
+  opacity: 1;
+  background-image:url('img/fantasmita.gif');
+  animation: float 2s ease-in-out infinite;
+}
+
+.shooter{
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.shooter img{
+  width:16%;
+}
+
+.bomb{
+  filter: grayscale(80%);
+  background-image:url('img/fantasma.png');
+}
+
+
+
+
+@keyframes float {
+  0% {
+    transform: translateX(1px);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(1px);
+  }
+}
+
+.alert{
+  border: 2px solid red;
+  animation: shake 0.30s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+.success{
+  border: 2px solid green;
+  animation: shake 0.30s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
