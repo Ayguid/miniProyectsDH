@@ -7,18 +7,36 @@
 <body>
   <h2>Funciones</h2>
 
-  <p>En este ejemplo llamamos a una funcion que realiza un calculo y nos lo devuelve:</p>
+  <!-- <p>En este ejemplo llamamos a una funcion que realiza un calculo y nos lo devuelve:</p>
 
-  <p id="demo"></p>
+  <p id="demo"></p> -->
+
+  <button type="button" name="button" onclick="saludar();">Click Aqui</button>
+
+  <div id="resultado"></div>
 
   <script>
 
   //empezaria de una con el return y parametros .....despues explicar que no siempre se retorna informacion y solo hacemos otros procedimientos
-    function multiplicar(x, y) {
-      return x * y;
-    }
+    // function multiplicar(x, y) {
+    //   return x * y;
+    // }
 
-    document.getElementById("demo").innerHTML = multiplicar(4, 3);
+    // document.getElementById("demo").innerHTML = multiplicar(4, 3);
+  function saludar() {
+    var nombre = prompt('Ingrese su nombre');
+    document.getElementById('resultado').innerHTML = devolverSaludo(nombre);
+  }
+
+
+  function devolverSaludo(x) {
+    var saludo = "Hola " + x;
+    return saludo;
+  }
+
+
+
+
 
   </script>
 </body>

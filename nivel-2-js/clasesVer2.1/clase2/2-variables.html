@@ -33,7 +33,6 @@
     <h2>JavaScript Variables y Entradas de informacion</h2>
     <!-- <p>En este ejemplo, x, y, z son variables.</p> -->
     <!-- <p>En este ejemplo, a, b, c son variables.</p> -->
-    <button type="button" name="button" onclick="alert('Hello')">Saludar</button>
 
     <p id="numeros"></p>
 
@@ -41,7 +40,6 @@
 
     <p id="demo"></p>
 
-    <p id="demo2"></p>
 
     <script>
       //numeros enteros
@@ -56,13 +54,10 @@
       var c = a + b;
       document.getElementById("texto").innerHTML = c;
 
-      //salida informacion una es alert
-      var valorBooleano = confirm('Valores TRUE OR FALSE');//devuelve true or false;
-      var valorDeTextoONumerico = prompt('Ingresa un valor');//devuelve true or false;
 
+      var valorDeTextoONumerico = prompt('Ingresa un valor');
       //entradas de informacion;
-      document.getElementById('demo').innerHTML = valorBooleano;
-      document.getElementById('demo2').innerHTML= valorDeTextoONumerico;//devuelve el valor ingresado por el usuario
+      document.getElementById('demo').innerHTML= valorDeTextoONumerico;//devuelve el valor ingresado por el usuario
 
     </script>
 
