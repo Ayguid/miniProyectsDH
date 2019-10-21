@@ -12,10 +12,10 @@
   <button id="button" onclick="tirarDado()">Tirar el dado</button>
 
   <script type="text/javascript">
-
+  
   function tirarDado() {
     //generamos el numero random
-    var numeroRandom = Math.floor(Math.random() * 6)+1;
+    var numeroRandom = Math.floor( Math.random() * 6 )+1;
     // insertamos el numero random en el div con id "divDado"
     document.getElementById('divDado').innerHTML=numeroRandom;
   }
