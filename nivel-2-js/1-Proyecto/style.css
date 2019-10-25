@@ -1,0 +1,19 @@
+
+.caja {
+  position: relative;
+  float: left;
+  margin: 1%;
+  width: 23%;
+  box-shadow: 0px 9px 23px 0px rgba(0,0,0,0.75);
+
+}
+
+.caja:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.caja:hover{
+  transform: scale(0.9);
+  animation-play-state: paused;
+}
