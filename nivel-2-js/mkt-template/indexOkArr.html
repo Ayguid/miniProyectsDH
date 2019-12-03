@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  *{
+    box-sizing: border-box;
+  }
+  html, body, div, span, applet, object, iframe,
+   h1, h2, h3, h4, h5, h6, p, blockquote,
+    pre, a, abbr, acronym, address,
+    big, cite, code, del, dfn, em, font,
+    img, ins, kbd, q, s, samp, small, strike,
+    strong, sub, sup, tt, var, b, u, i, center, dl,
+    dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+  body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .arrow {
+    z-index: 100;
+    position: absolute;
+    padding: 3rem;
+    box-shadow: 1px -1px 0 1px plum inset;
+    -webkit-box-shadow: 2px -2px plum inset;
+    border: solid transparent;
+    border-width: 0 0 2rem 2rem;
+    transition: 0.2s;
+    cursor: pointer;
+    top:50%;
+    margin:-67px 0 0 -67px;
+    left:15%;
+  }
+  .arrow:nth-child(2) {
+    left:85% ;
+  }
+  .arrow:hover {
+    box-shadow: 2px -2px 0 2px orchid inset;
+    -webkit-box-shadow: 4px -4px orchid inset;
+  }
+  .arrow-up    { transform:rotate(135deg) }
+  .arrow-right { transform:rotate(225deg) }
+  .arrow-down  { transform:rotate(-45deg) }
+  .arrow-left  { transform:rotate(45deg) }
+
+  /* estilos pertinentes */
+  .ventana{
+    height: 100%;
+    display: none;
+    height: 100vh;
+    background-color:lavender;
+  }
+  .show{
+    display: block;
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
+    opacity: 1;
+  }
+  @-webkit-keyframes fadeIn {
+      from { opacity: 0; }
+        to { opacity: 1; }
+  }
+  @keyframes fadeIn {
+      from { opacity: 0; }
+        to { opacity: 1; }
+  }
+  </style>
+</head>
+<body>
+
+
+
+
+  <div class="container">
+
+    <div class="arrow arrow-left" onclick="cambiarVentana('izq')"></div>
+
+    <div class="arrow arrow-right" onclick="cambiarVentana('der')"></div>
+
+
+    <div id="ventanaIzq" class="ventana">
+      <h3>Ventana Izq</h3>
+    </div>
+
+
+
+    <div id="ventanaCnt" class="ventana show">
+      <h3>Ventana Cent</h3>
+    </div>
+
+
+
+    <div id="ventanaDer" class="ventana">
+      <h3>Ventana Der</h3>
+    </div>
+
+
+    <!--
+    <div id="ventanaArr" class="ventana">
+    <h3>Ventana Arr</h3>
+  </div>
+
+
+
+  <div id="ventanaAbj" class="ventana">
+  <h3>Ventana Abj</h3>
+</div> -->
+
+</div>
+
+<script type="text/javascript">
+
+//variable global en la que guardamos en que ventana estamos.
+var position = 1;
+//array que contiene los ids de nuetras ventanas
+var ventanas =  [
+  'ventanaIzq',
+  'ventanaCnt',
+  'ventanaDer'
+];
+
+//funcion para cambiar de ventanas la cual toma una direccion como parametro
+function cambiarVentana(dir) {
+  var hide;
+  //escuchamos la flecha izquierda
+  if (dir == "izq") {
+    position--;
+    hide = position+1;
+  }
+
+  //escuchamos la flecha derecha
+  if (dir == "der") {
+    position++;
+    hide = position-1;
+  }
+
+  //escuchamos la flecha arriba
+  if (dir == "arr") {}
+  //escuchamos la flecha abajo
+  if (dir == "arr") {}
+
+  if (position < 0) {
+    position = 0;
+  }
+  if (position >= ventanas.length-1) {
+    position = ventanas.length-1;
+  }
+  document.getElementById(ventanas[hide]).classList.remove('show');
+  document.getElementById(ventanas[position]).classList.add('show');
+  console.log(position, ventanas.length);
+}
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  *{
+    box-sizing: border-box;
+  }
+  .ventana{
+    height: 98.3vh;
+    width: 100%;
+    display: none;
+    background-color: red;
+  }
+  .show{
+    display: block;
+  }
+  .arrowL, .arrowR , .arrowU, .arrowD  {
+    
+    margin-top: 50vh;
+    box-sizing: border-box;
+    height: 5vw;
+    width: 5vw;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 1px 1px 0px;
+    transition: border-width 150ms ease-in-out;
+  }
+  .arrowL {
+    transform: rotate(135deg);
+    float: left;
+  }
+  .arrowR {
+    transform: rotate(-45deg);
+    float: right;
+  }
+  .arrowU {
+    transform: rotate(-135deg);
+    position: absolute;
+    top: -45%;
+    margin-left: 46%;
+  }
+  .arrowD {
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 5%;
+    margin-left: 46%;
+  }
+
+  .arrowL:hover, .arrowR:hover, .arrowU:hover, .arrowD:hover {
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  #full {
+    /* height: 100vh; */
+    background-color: #256347;
+  }
+  </style>
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+  <div class="arrowL" onclick="cambiarVentana('izq')"></div>
+  <div class="arrowR" onclick="cambiarVentana('der')"></div>
+  <div class="arrowU" onclick="cambiarVentana('arr')"></div>
+  <div class="arrowD" onclick="cambiarVentana('abj')"></div>
+
+
+  <div id="ventanaIzq" class="ventana">
+    1
+  </div>
+
+
+
+  <div id="ventanaCenter" class="ventana show">
+    Welcome Screen 2
+  </div>
+
+
+
+  <div id="ventanaDer" class="ventana">
+    3
+  </div>
+
+
+
+  <div id="ventanaUp" class="ventana">
+    4
+  </div>
+
+
+
+  <div id="ventanaDown" class="ventana">
+    5
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+  //variable global en la que guardamos en que ventana estamos.
+  var ventana = "ventanaCenter";
+
+  function cambiarVentana(dir) {
+
+    //escuchamos la flecha izquierda
+    if (dir == "izq") {
+
+      if (ventana == "ventanaCenter") {
+        ventana = "ventanaIzq";
+        document.getElementById('ventanaIzq').classList.add('show');
+        document.getElementById('ventanaCenter').classList.remove('show');
+      }
+      if (ventana == "ventanaDer") {
+        ventana = "ventanaCenter";
+        document.getElementById('ventanaCenter').classList.add('show');
+        document.getElementById('ventanaDer').classList.remove('show');
+      }
+
+    }
+
+    //escuchamos la flecha derecha
+    if (dir == "der") {
+
+      if (ventana == "ventanaCenter") {
+        ventana = "ventanaDer";
+        document.getElementById('ventanaDer').classList.add('show');
+        document.getElementById('ventanaCenter').classList.remove('show');
+      }
+      if (ventana == "ventanaIzq") {
+        ventana = "ventanaCenter";
+        document.getElementById('ventanaCenter').classList.add('show');
+        document.getElementById('ventanaIzq').classList.remove('show');
+      }
+
+    }
+    //escuchamos la flecha arriba
+    if (dir == "arr") {
+      if (ventana == "ventanaCenter") {
+        ventana = "ventanaDer";
+        document.getElementById('ventanaDer').classList.add('show');
+        document.getElementById('ventanaCenter').classList.remove('show');
+      }
+      if (ventana == "ventanaIzq") {
+        ventana = "ventanaCenter";
+        document.getElementById('ventanaCenter').classList.add('show');
+        document.getElementById('ventanaIzq').classList.remove('show');
+      }
+
+    }
+
+
+  }
+
+</script>
+
+</body>
+</html>
